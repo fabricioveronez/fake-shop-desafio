@@ -1,6 +1,8 @@
 from sqlalchemy import Column, Integer, String, Float
 from models.base import db
 
+teste = "Variável"
+
 class Product(db.Model):
     __tablename__ = 'products'
 
