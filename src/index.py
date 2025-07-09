@@ -15,6 +15,8 @@ app = Flask(__name__,
 
 app.secret_key = 'supersecretkey'  # Para manter a sessão
 
+teste = "Alteração de Código"
+
 metrics = GunicornPrometheusMetrics(app)
 metrics.register_endpoint('/metrics')
 
