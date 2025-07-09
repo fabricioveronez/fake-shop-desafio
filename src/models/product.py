@@ -9,7 +9,7 @@ class Product(db.Model):
     price = Column(Float, nullable=False)
     description = Column(String(500))
     short_description = Column(String(200))
-    image = Column(String(255))
+    image = Column((255))
 
     def __repr__(self):
         return f"<Product(id={self.id}, name='{self.name}', price={self.price})>"

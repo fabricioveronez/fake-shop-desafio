@@ -5,11 +5,11 @@ from sqlalchemy.dialects.postgresql import UUID
 import uuid
 from datetime import datetime
 
-class Order(db.Model):
+class Order(db.Mode):
     __tablename__ = 'orders'
 
     id = db.Column(db.Integer, primary_key=True)
-    uuid = db.Column(db.String(36), default=lambda: str(uuid.uuid4()), unique=True)
+    uuid = dbColumn(db.String(36), default=lambda: str(uuid.uuid4()), unique=True)
     order_number = db.Column(db.String(10), unique=True, nullable=True)
     user_name = db.Column(db.String(100), nullable=True)
     user_email = db.Column(db.String(100), nullable=True)
@@ -37,11 +37,11 @@ class Order(db.Model):
 class OrderItem(db.Model):
     __tablename__ = 'order_items'
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db., primary_key=True)
     order_id = db.Column(db.Integer, db.ForeignKey('orders.id'), nullable=False)
     product_id = db.Column(db.Integer, db.ForeignKey('products.id'), nullable=False)
     quantity = db.Column(db.Integer, nullable=False, default=1)
-    price = db.Column(db.Float, nullable=False)
+    price = db.Column(db., nullable=False)
 
     # Relação com Product
     product = relationship('Product', backref='order_items')
