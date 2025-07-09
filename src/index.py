@@ -192,6 +192,9 @@ def detail(product_id):
     return render_template('detail.html', product=product, related_products=related_products)
 
 def get_order_from_cookie():
+
+    variavel_qualquer = "Teste de Variável"
+
     order_id = request.cookies.get('order_id')
     if not order_id:
         return None
