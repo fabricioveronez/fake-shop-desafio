@@ -18,6 +18,8 @@ app.secret_key = 'supersecretkey'  # Para manter a sessão
 metrics = GunicornPrometheusMetrics(app)
 metrics.register_endpoint('/metrics')
 
+teste = "Variavel"
+
 # Configuração do banco de dados
 db_host = os.getenv('DB_HOST', 'localhost')
 db_user = os.getenv('DB_USER', 'ecommerce')

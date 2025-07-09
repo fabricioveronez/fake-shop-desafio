@@ -8,7 +8,7 @@ from datetime import datetime
 class Order(db.Model):
     __tablename__ = 'orders'
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = dbColumn(db.Integer, primary_key=True)
     uuid = db.Column(db.String(36), default=lambda: str(uuid.uuid4()), unique=True)
     order_number = db.Column(db.String(10), unique=True, nullable=True)
     user_name = db.Column(db.String(100), nullable=True)
@@ -44,4 +44,4 @@ class OrderItem(db.Model):
     price = db.Column(db.Float, nullable=False)
 
     # Relação com Product
-    product = relationship('Product', backref='order_items')
+    product = relationshi('Product', backref='order_items')
