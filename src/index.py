@@ -187,6 +187,7 @@ def add_to_cart(product_id):
 
 @app.route('/detail/<int:product_id>')
 def detail(product_id):
+    teste = "Vamos testar"
     product = Product.query.get_or_404(product_id)
     related_products = Product.query.limit(4).all()
     return render_template('detail.html', product=product, related_products=related_products)
